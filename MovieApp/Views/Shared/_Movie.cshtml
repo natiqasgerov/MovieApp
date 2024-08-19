@@ -1,0 +1,22 @@
+﻿@model Movie
+
+
+
+
+<div class="cardrow">
+    <div class="rowbox1">
+        @if (!string.IsNullOrWhiteSpace(Model.ImageUrl))
+        {
+            <img class="image" src="/img/@Model.ImageUrl" class="image" />
+        }
+    </div>
+    <div class="rowbox2">
+        <p>@Model.Title</p>
+    
+        <p>
+            <a href="/movies/details/@Model.MovieId" class="btn btn-primary">Details</a>
+        </p>
+    </div>
+</div>
+
+

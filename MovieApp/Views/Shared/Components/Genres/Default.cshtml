@@ -1,0 +1,9 @@
+﻿@model List<Genre>
+
+<div class="list-group" style="padding: 20px;width: 100%;margin-top: 20px;">
+    <a href="/movies/list/" class="btn btn-outline-secondary" style="margin: 5px;">All Films</a>
+    @foreach (var genre in Model)
+    {
+        <a href="/movies/list/@genre.GenreId" class="btn btn-outline-secondary" style="margin: 5px;">@genre.Name</a>
+    }
+</div>

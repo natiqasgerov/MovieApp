@@ -1,0 +1,22 @@
+﻿@model Movie;
+
+<div class="cardrow">
+    <div class="rowbox1">
+        @if (!string.IsNullOrWhiteSpace(Model.ImageUrl))
+        {
+            <img class="image" src="/img/@Model.ImageUrl" class="image" />
+        }
+    </div>
+    <div class="rowbox2">
+        <p>Header: @Model.Title</p>
+        <p>Description: @Model.Description</p>
+        <p>Director: @Model.Director</p>
+        <p>Genre: @GenreRepository.GetByIdGenre(Model.GenreId).Name</p>
+        <ul>
+        @foreach (var item in Model.Actors)
+        {
+            <li>Actor: @item</li>
+        }
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @await Html.PartialAsync("_Styles")
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <a href="/home/index" class="navbar-brand">MovieApp</a>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a href="/movies/list" class="nav-link">Films</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="/home/about" class="nav-link">About</a>
+                    </li>
+                </ul>
+               
+
+                <form class="row g-3" style="margin-top: 1px;margin-left: 55%;" action="/movies/list">
+                    <div class="col-auto">
+                        <input type="text" class="form-control" placeholder="Search Film" name="query">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-outline-light mb-3">Find</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="mycontainer">
+        <div class="my col1">@RenderSection("Menu", false)</div>
+        <div class="my">
+            @RenderBody()
+        </div>
+
+    </div>
+
+    @await Html.PartialAsync("_Scripts")
+</body>
+</html>
